@@ -1,14 +1,18 @@
-"""Tests for catalog search, hot lists, and the invoke gate."""
+"""Tests for catalog search, hot lists, and the invoke facade."""
 
 from __future__ import annotations
 
+import asyncio
+import sys
 from pathlib import Path
 
 import pytest
 
-from kicad_bridge import catalog, hotlists, transport
+from kicad_bridge import catalog, hotlists
 from kicad_bridge.server import invoke_impl
 from kicad_bridge.server import mcp as bridge_mcp
+
+# --- catalog search ----------------------------------------------------------
 
 
 def test_search_finds_by_name_substring() -> None:
@@ -27,10 +31,13 @@ def test_search_empty_query_returns_empty() -> None:
     assert catalog.search("") == []
 
 
+# --- hot lists ----------------------------------------------------------------
+
+
 def test_hot_list_returns_curated_tools() -> None:
     payload = hotlists.hot_list("verification")
     assert payload["use_case"] == "verification"
-    assert any(t["name"] == "verify_board" for t in payload["tools"])
+    assert any(tool["name"] == "verify_board" for tool in payload["tools"])
 
 
 def test_hot_list_reports_stale_entries() -> None:
@@ -52,51 +59,77 @@ def test_hot_list_unknown_use_case_lists_available() -> None:
     assert "verification" in payload["available_use_cases"]
 
 
-async def test_invoke_requires_confirmation_for_destructive() -> None:
+# --- invoke facade ------------------------------------------------------------
 
+
+async def test_invoke_requires_confirmation_for_destructive() -> None:
     payload = await invoke_impl("sch_delete_symbol", {"reference": "R1"}, confirm=False)
     assert "confirmation_required" in payload
 
 
 async def test_invoke_rejects_unknown_tool() -> None:
-
     payload = await invoke_impl("no_such_tool_xyz", {}, confirm=True)
     assert "unknown_tool" in payload
 
 
 async def test_invoke_forwards_to_transport(monkeypatch: pytest.MonkeyPatch) -> None:
+    from kicad_bridge import server as server_module
 
     seen: dict[str, object] = {}
 
-    async def fake_invoke(name: str, args: dict, *, target=None, request_timeout_s=120.0):
-        seen["name"] = name
-        seen["args"] = args
-        return {"tool": name, "isError": False, "content": ["ok"]}
+    class FakeSession:
+        async def call(self, name: str, args: dict) -> dict:
+            seen["name"] = name
+            seen["args"] = args
+            return {"tool": name, "isError": False, "content": ["ok"]}
 
-    monkeypatch.setattr(transport, "invoke_tool", fake_invoke)
+    async def fake_get_target_session() -> FakeSession:
+        return FakeSession()
+
+    monkeypatch.setattr(server_module, "get_target_session", fake_get_target_session)
     payload = await invoke_impl("verify_board", {}, confirm=True)
 
     assert seen["name"] == "verify_board"
     assert '"isError": false' in payload
 
 
-def test_registered_tools_are_the_three_facade_tools() -> None:
-    import asyncio
+def test_target_command_env_override(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    from kicad_bridge.transport import target_command
 
+    monkeypatch.setenv(
+        "KICAD_BRIDGE_TARGET",
+        f'["uv", "run", "--project", "{tmp_path}", "kicad-mcp-pro"]',
+    )
+    command = target_command()
+    assert command[0] == "uv" and command[-1] == "kicad-mcp-pro"
+
+
+# --- facade surface -------------------------------------------------------------
+
+
+def test_registered_tools_are_the_facade_surface() -> None:
     loop = asyncio.new_event_loop()
     try:
         names = {tool.name for tool in loop.run_until_complete(bridge_mcp.list_tools())}
     finally:
         loop.close()
-    assert names == {"tool_search", "hot_list", "tool_invoke"}
+    assert names == {
+        "tool_search",
+        "hot_list",
+        "tool_invoke",
+        "session_status",
+        "session_restart",
+    }
 
 
-def test_target_command_env_override(
-    monkeypatch: pytest.MonkeyPatch, tmp_path: Path
-) -> None:
-    monkeypatch.setenv(
-        "KICAD_BRIDGE_TARGET",
-        '["uv", "run", "--project", "{}", "kicad-mcp-pro"]'.format(tmp_path),
-    )
-    command = transport.target_command()
-    assert command[0] == "uv" and command[-1] == "kicad-mcp-pro"
+async def test_target_session_self_host_roundtrip() -> None:
+    """The bridge can serve as its own target: spawn it, call tool_search, stop."""
+    from kicad_bridge.transport import TargetSession
+
+    session = TargetSession(command=[sys.executable, "-m", "kicad_bridge"])
+    try:
+        payload = await session.call("tool_search", {"query": "verify", "limit": 3})
+        assert '"verify_board"' in payload["content"][0]
+    finally:
+        await session.stop()
+    assert not session.running

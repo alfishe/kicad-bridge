@@ -6,8 +6,13 @@ tool catalog (390 tools, 16 categories). The agent-facing surface is exactly thr
 | Tool | Purpose |
 |---|---|
 | `tool_search(query, limit)` | ranked catalog search (name > description > category) |
-| `hot_list(use_case)` | curated minimal tool list per use case: `schematic_entry`, `pcb_layout`, `verification`, `manufacturing`, `library` |
-| `tool_invoke(name, arguments, confirm)` | forward one call to the target KiCad MCP server; destructive tools require `confirm=true` |
+| `hot_list(use_case)` | curated minimal tool list per use case: `schematic_entry`, `pcb_layout`, `verification`, `manufacturing`, `library`, `routing`, `dfm`, `sourcing`, `simulation` |
+| `tool_invoke(name, arguments, confirm)` | forward one call over a **persistent session** to the target server; destructive tools require `confirm=true` |
+| `session_status` / `session_restart` | inspect / respawn the target server session |
+
+The target server is spawned lazily on the first invoke and reused (one process,
+one stdio connection). The full environment is passed through by default — the
+mcp SDK's stdio client otherwise strips `KICAD_MCP_*` config variables.
 
 ## Run
 
@@ -19,7 +24,7 @@ uv run kicad-bridge            # stdio MCP server
 Configuration (env):
 
 - `KICAD_BRIDGE_TARGET` — JSON command to spawn the target server
-  (default `["kicad-mcp-pro"]`)
+  (default `["kicad-mcp-pro", "--mode", "write"]`)
 - `KICAD_BRIDGE_CATALOG` — path to an alternative catalog.json
 
 ## Refresh the catalog

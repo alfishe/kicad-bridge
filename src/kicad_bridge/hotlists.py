@@ -39,9 +39,34 @@ HOT_LISTS: dict[str, list[str]] = {
         "verify_board",
     ],
     "library": [
-        "library_resolve",
-        "sch_add_component",
+        "lib_assign_footprint",
+        "lib_assign_lcsc_to_symbol",
+        "lib_bulk_assign_3d_models",
         "verify_board",
+    ],
+    "routing": [
+        "kicad_set_project",
+        "pcb_route_trace",
+        "route_autoroute_freerouting",
+        "pcb_refill_zones",
+        "verify_board",
+    ],
+    "dfm": [
+        "dfm_load_manufacturer_profile",
+        "dfm_run_manufacturer_check",
+        "dfm_calculate_manufacturing_cost",
+        "manufacturing_quality_gate",
+        "verify_board",
+    ],
+    "sourcing": [
+        "lib_assign_lcsc_to_symbol",
+        "export_bom",
+        "verify_board",
+    ],
+    "simulation": [
+        "sim_assign_spice_model",
+        "sim_add_spice_directive",
+        "sim_check_stability",
     ],
 }
 

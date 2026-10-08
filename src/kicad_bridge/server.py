@@ -10,7 +10,12 @@ try:
 except ImportError:  # official SDK layout
     from mcp.server.fastmcp import FastMCP
 
-from . import catalog, hotlists, transport
+from . import catalog, hotlists
+from .transport import (
+    get_target_session,
+    requires_confirmation,
+    restart_target_session,
+)
 
 mcp = FastMCP("kicad-bridge")
 
@@ -35,7 +40,7 @@ async def invoke_impl(
         return json.dumps(
             {"error": "unknown_tool", "tool": name, "hint": "use tool_search"}, indent=2
         )
-    if transport.requires_confirmation(name) and not confirm:
+    if requires_confirmation(name) and not confirm:
         return json.dumps(
             {
                 "error": "confirmation_required",
@@ -46,10 +51,24 @@ async def invoke_impl(
         )
 
     try:
-        payload = await transport.invoke_tool(name, arguments or {})
+        payload = await (await get_target_session()).call(name, arguments or {})
     except Exception as exc:  # noqa: BLE001 - surfaced to the agent as JSON
         return json.dumps({"error": "invoke_failed", "tool": name, "detail": str(exc)}, indent=2)
     return json.dumps(payload, indent=2)
+
+
+@mcp.tool()
+async def session_status() -> str:
+    """Show whether the target KiCad MCP server session is running."""
+    session = await get_target_session()
+    return json.dumps({"running": session.running, "command": session.command}, indent=2)
+
+
+@mcp.tool()
+async def session_restart() -> str:
+    """Stop and respawn the target KiCad MCP server session (pick up new config)."""
+    session = await restart_target_session()
+    return json.dumps({"restarted": True, "running": session.running}, indent=2)
 
 
 @mcp.tool()
