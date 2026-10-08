@@ -1,0 +1,2035 @@
+{
+ "source": "alfishe/kicad-mcp-pro@feature/realtime-ipc (0d7716a+)",
+ "categories": {
+  "project": {
+   "description": "Project setup, server discovery, and quick help.",
+   "tools": [
+    {
+     "name": "audit_replay",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "audit_tail",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_set_project",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_get_project_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_design_workflow",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_set_design_intent",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_import_design_spec",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_get_design_intent",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_get_design_spec",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_infer_design_spec",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_assess_edit_impact",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_revalidate_after_edit",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_validate_design_spec",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_generate_design_prompt",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_get_next_action",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_auto_fix_loop",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_full_validation_loop",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_gate_trend",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_design_report",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_list_recent_projects",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_scan_directory",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_create_new_project",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_get_version",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_get_server_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_list_tool_categories",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_get_tools_in_category",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_capability_parity",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "kicad_help",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "studio_push_context",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_list_embedded_files",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_embed_file",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_extract_embedded_file",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_remove_embedded_file",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "pcb_read": {
+   "description": "Read PCB state including tracks, vias, footprints, nets, and layers.",
+   "tools": [
+    {
+     "name": "pcb_get_board_summary",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_tracks",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_vias",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_footprints",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_nets",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_zones",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_shapes",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_pads",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_layers",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_stackup",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_selection",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_board_as_string",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_ratsnest",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_design_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_footprint_layers",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_visual_qa",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_impedance_for_trace",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_groups",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_origin",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_check_creepage_clearance",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_block_list",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_net_statistics",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_net_inspector",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_test_point",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_list_test_points",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_optimize_test_point_placement",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_check_test_coverage",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "pcb_write": {
+   "description": "Modify PCB geometry, sync initial footprints, and save board changes.",
+   "tools": [
+    {
+     "name": "pcb_add_track",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_route_trace",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_tracks_bulk",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_via",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_zone",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_copper_zone",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_segment",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_circle",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_rectangle",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_text",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_board_outline",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_design_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_stackup",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_blind_via",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_microvia",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_auto_place_by_schematic",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_place_decoupling_caps",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_group_by_function",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_align_footprints",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_keepout_zone",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_mounting_holes",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_fiducial_marks",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_teardrops",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_auto_place_force_directed",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_bga_fanout",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_delete_object",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_delete_items",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_save",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_refill_zones",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_highlight_net",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_net_class",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_place_component",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_move_component",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_move_footprint",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_footprint_layer",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_sync_from_schematic",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_origin",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_set_title_block_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_import_board",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_begin_commit",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_get_live_edit_state",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_push_commit",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_drop_commit",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_revert",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "add_footprint_inner_layer_graphic",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_barcode",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_add_bitmap_board_art",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_block_create_from_selection",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_block_place",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "schematic": {
+   "description": "Inspect and edit schematic files with hybrid IPC reload support.",
+   "tools": [
+    {
+     "name": "sch_get_symbols",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_wires",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_labels",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_net_names",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_create_sheet",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_move_sheet",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_delete_sheet",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_list_sheets",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_sheet_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_list_sheet_pins",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_component",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_wire",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_label",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_labels",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_pin_labels",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_global_label",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_hierarchical_label",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_sheet_pin",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_import_sheet_pins",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_spread_sheets",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_wire_sheet_pins",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_power_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_bus",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_bus_wire_entry",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_no_connect",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_set_dnp",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_population_status",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_update_properties",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_modify_property",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_delete_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_move_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_delete_wire",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_delete_label",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_delete_no_connect",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_move_label",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_modify_label",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_analyze_net_compilation",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_build_circuit",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_pin_positions",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_route_wire_between_pins",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_missing_junctions",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_connectivity_graph",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_trace_net",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_auto_place_symbols",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_autoplace_fields",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_fix_readability",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_check_power_flags",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_annotate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_reload",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_bounding_boxes",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_find_free_placement",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_auto_place_functional",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_render_png",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_render_visual_diff",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_live_preview",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_circuit_ir",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_visual_qa",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_cosmetic_score",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_align_to_grid",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_straighten_wires",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_resolve_label_overlaps",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_normalize_power_orientation",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_normalize_text_sizes",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_visual_baseline_set",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_visual_baseline_compare",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_plan_from_spec",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_preview_plan",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_apply_plan",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_verify_plan",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_rollback_plan",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_set_title_block_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_set_sheet_size",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_auto_resize_sheet",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_list_templates",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_get_template_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_instantiate_template",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_set_hop_over",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_list_swappable_pins",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_swap_pins",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_swap_gates",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_add_jumper",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_list",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_create",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_set_active",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_set_component_override",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_diff_bom",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_export_bom",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_clone",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_delete",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_get_component_status",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_export_schematic",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "variant_export_manufacturing_package",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "library": {
+   "description": "Search and inspect symbol/footprint libraries plus live component data.",
+   "tools": [
+    {
+     "name": "lib_search_symbols",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_get_symbol_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_list_libraries",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_search_footprints",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_list_footprints",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_rebuild_index",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_get_footprint_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_get_footprint_3d_model",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_verify_component_contract",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_assign_footprint",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_create_custom_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_search_components",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_get_component_details",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_assign_lcsc_to_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_get_bom_with_pricing",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_check_stock_availability",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_check_sourcing_policy",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_find_alternative_parts",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_get_datasheet_url",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_generate_footprint_ipc7351",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_validate_footprint_ipc7351",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_certify_footprint",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_check_derating",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_generate_symbol_from_pintable",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_recommend_part",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_bind_part_to_symbol",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_set_3d_model_path",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_remove_3d_model",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_bulk_assign_3d_models",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "lib_search_3d_models",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "export": {
+   "description": "Produce low-level debug, review, and interchange exports.",
+   "tools": [
+    {
+     "name": "export_gerber",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_drill",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_bom",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_netlist",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_spice_netlist",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_pcb_pdf",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_sch_pdf",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_3d_step",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_step",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_stepz",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_xao",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_3d_render",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_pick_and_place",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_ipc2581",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_odb",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_svg",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_dxf",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_sch_svg",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_sch_dxf",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_sch_python_bom",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_export_3d_pdf",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_brep",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_glb",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_gencad",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_ipc_d356",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_ply",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_stl",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_u3d",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_vrml",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "export_ps",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_export_stats",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "release_export": {
+   "description": "Produce release-gated manufacturing handoff artifacts.",
+   "tools": [
+    {
+     "name": "export_manufacturing_package",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "get_board_stats",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "manufacturing": {
+   "description": "Panelization, bring-up test plan generation, and release manifest.",
+   "tools": [
+    {
+     "name": "mfg_panelize",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_generate_test_plan",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_generate_release_manifest",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_create_release_evidence",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_correct_cpl_rotations",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_check_import_support",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_import_allegro",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_import_pads",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_import_geda",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "jobset_list_templates",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "jobset_export",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "jobset_run",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "jobset_validate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "fp_export",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "fp_export_svg",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "fp_upgrade",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "fp_get_info",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sym_export",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sym_export_svg",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sym_upgrade",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "mfg_import_specctra",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sch_upgrade",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_upgrade",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "validation": {
+   "description": "Design validation, DFM checks, and rule inspection.",
+   "tools": [
+    {
+     "name": "verify_board",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "schematic_quality_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "schematic_connectivity_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "schematic_design_rule_check",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_quality_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_placement_quality_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_placement_quality_report",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_transfer_quality_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_stackup_consistency_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_route_corner_style_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_score_placement",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pcb_critique_placement",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "manufacturing_quality_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_quality_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_quality_gate_report",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_signoff_report",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_release_readiness",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "project_professional_release_gate",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "run_drc",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "run_erc",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "validate_design",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "check_design_for_manufacture",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "get_unconnected_nets",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "get_courtyard_violations",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "get_silk_to_pad_violations",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "validate_footprints_vs_schematic",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_list_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_check_rule_conflicts",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_rule_create",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_rule_delete",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_rule_enable",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_export_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_list_exclusions",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_add_exclusion",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_remove_exclusion",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "drc_validate_exclusions",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "erc_list_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "erc_set_rule_severity",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "erc_reset_rules",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "dfm": {
+   "description": "Load bundled manufacturer profiles, run DFM checks, and estimate cost.",
+   "tools": [
+    {
+     "name": "dfm_load_manufacturer_profile",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "dfm_run_manufacturer_check",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "dfm_calculate_manufacturing_cost",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "routing": {
+   "description": "Advanced routing helpers including FreeRouting orchestration and rule-file tuning.",
+   "tools": [
+    {
+     "name": "route_single_track",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_from_pad_to_pad",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_export_dsn",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_import_ses",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_apply_ses",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_autoroute_freerouting",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_set_net_class_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_differential_pair",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_tune_length",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "tune_diff_pair_length",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_create_tuning_profile",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_list_tuning_profiles",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_apply_tuning_profile",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "route_tune_time_domain",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "generate_board_constraints",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "signal_integrity": {
+   "description": "Estimate impedance, skew, length matching, stackup geometry, via stubs, and decoupling placement.",
+   "tools": [
+    {
+     "name": "si_get_solver_capabilities",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_calculate_trace_impedance",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_calculate_trace_width_for_impedance",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_check_differential_pair_skew",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_validate_length_matching",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_generate_stackup",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_check_via_stub",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_calculate_decoupling_placement",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_list_dielectric_materials",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_synthesize_stackup_for_interfaces",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_bind_interfaces_to_net_classes",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "si_analyze_high_speed_channel",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "power_integrity": {
+   "description": "Estimate voltage drop, current capacity, decoupling needs, power planes, and thermal spreading.",
+   "tools": [
+    {
+     "name": "check_power_integrity",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pdn_calculate_voltage_drop",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pdn_recommend_decoupling_caps",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pdn_check_copper_weight",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "pdn_generate_power_plane",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "thermal_calculate_via_count",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "thermal_check_copper_pour",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "thermal_simulate_plane_spreading",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "emc": {
+   "description": "Run lightweight EMC-oriented layout checks and a bundled compliance sweep.",
+   "tools": [
+    {
+     "name": "emc_check_ground_plane_voids",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_check_return_path_continuity",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_check_split_plane_crossing",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_check_decoupling_placement",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_check_via_stitching",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_check_differential_pair_symmetry",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_check_high_speed_routing_rules",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "emc_run_full_compliance",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "simulation": {
+   "description": "SPICE analysis, model assignment, and library management.",
+   "tools": [
+    {
+     "name": "sim_run_operating_point",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_run_ac_analysis",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_run_transient",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_run_dc_sweep",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_check_stability",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_add_spice_directive",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_assign_spice_model",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_list_spice_libraries",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_add_spice_library",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_remove_spice_library",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "sim_validate_spice_setup",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  },
+  "version_control": {
+   "description": "Create Git checkpoints, inspect diffs, and safely restore project files.",
+   "tools": [
+    {
+     "name": "vcs_init_git",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "vcs_commit_checkpoint",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "vcs_list_checkpoints",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "vcs_restore_checkpoint",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "vcs_diff_with_checkpoint",
+     "description": "",
+     "requires_kicad_running": false
+    },
+    {
+     "name": "vcs_tag_release",
+     "description": "",
+     "requires_kicad_running": false
+    }
+   ]
+  }
+ }
+}
